@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite de Casamento</title>
+
+<!-- PREVIEW WHATSAPP -->
+<meta property="og:title" content="Convite de Casamento Luan & Bia 💍">
+<meta property="og:description" content="Clique para ver todos os detalhes do nosso grande dia ❤️">
+<meta property="og:image" content="https://aquamarine-youtiao-9c13f2.netlify.app/a.jpg">
+<meta property="og:url" content="https://aquamarine-youtiao-9c13f2.netlify.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 420px;
+    margin: 20px auto;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    color: #2f3e2f;
+    overflow: hidden;
+
+    /* FUNDO DO CONVITE */
+    background: url('a.jpg') no-repeat center/cover;
+}
+
+.overlay {
+    background: rgba(255,255,255,0.88);
+    padding: 50px 25px;
+}
+
+.quote {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #3d5a40;
+}
+
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 44px;
+    color: #3d5a40;
+    margin: 25px 0;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.date {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.address {
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 12px 0;
+    padding: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    background: #3d5a40;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #2f4632;
+}
+
+.palette {
+    display: none;
+    margin-top: 25px;
+}
+
+.color-box {
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    margin: 6px;
+    border-radius: 10px;
+}
+
+.bambu { background: #d2b48c; }
+.preto { background: #000; }
+.inox { background: #c0c0c0; }
+.branco { background: #fff; border: 1px solid #ccc; }
+
+.note {
+    font-size: 13px;
+    margin-top: 20px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="overlay">
+
+<p class="quote">Dois corações que se unem para juntos crescerem no amor e no bem.</p>
+
+<div class="names">
+Luan Ribeiro Araujo <br> e <br> Beatriz Ferreira dos Santos
+</div>
+
+<p class="subtitle">convidam para a cerimônia de seu casamento</p>
+
+<div class="date">
+<strong>Sábado | 07 | Novembro</strong><br>
+às 14:00h
+</div>
+
+<div class="address">
+Rua José Antonio de Oliveira, 189<br>
+Nova Petrópolis - São Bernardo do Campo
+</div>
+
+<a class="btn" href="https://cha-de-casa-nova-xy28.listaideal.com.br/pt/" target="_blank">
+🎁 Lista de Presentes
+</a>
+
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+José+Antonio+de+Oliveira+189+SBC" target="_blank">
+📍 Localização
+</a>
+
+<a class="btn" onclick="togglePalette()">
+🎨 Paleta de Cores
+</a>
+
+<div class="palette" id="palette">
+    <p><strong>Paleta sugerida:</strong></p>
+    <div class="color-box bambu"></div>
+    <div class="color-box preto"></div>
+    <div class="color-box inox"></div>
+    <div class="color-box branco"></div>
+    <p>Bambu • Preto • Inox • Branco</p>
+</div>
+
+<p class="note">Pedimos a gentileza de seguir a paleta de cores.</p>
+
+</div>
+</div>
+
+<script>
+function togglePalette() {
+    var palette = document.getElementById("palette");
+    palette.style.display = palette.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
