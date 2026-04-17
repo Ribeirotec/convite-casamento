@@ -2,14 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Convite de Casamento - Luan & Bia</title>
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luan-bia.netlify.app/">
     <meta property="og:title" content="Convite de Casamento Luan & Bia 💍">
     <meta property="og:description" content="Clique para ver todos os detalhes do nosso grande dia ❤️">
-    
     <meta property="og:image" content="https://i.postimg.cc/c4z3Bppq/6341152c-c7d2-41e4-b6c1-bd271a5ab4bd.jpg">
     <meta property="og:image:secure_url" content="https://i.postimg.cc/c4z3Bppq/6341152c-c7d2-41e4-b6c1-bd271a5ab4bd.jpg">
     <meta property="og:image:type" content="image/jpeg">
@@ -19,59 +18,223 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-        body { margin: 0; font-family: 'Playfair Display', serif; background: #f5f5f5; }
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
         .container {
+            width: 100%;
             max-width: 420px;
-            margin: 20px auto;
-            border-radius: 20px;
+            min-height: 100vh;
+            background: url('a.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        @media (min-height: 700px) {
+            .container {
+                min-height: 95vh;
+                margin: 20px;
+                border-radius: 20px;
+            }
+        }
+
+        .overlay {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.88);
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            position: relative;
+        }
+
+        .quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #3d5a40;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 45px;
+            color: #3d5a40;
+            margin: 20px 0;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #555;
+            text-transform: lowercase;
+            font-style: italic;
+        }
+
+        .date {
+            font-size: 18px;
+            margin: 15px 0;
             color: #2f3e2f;
-            overflow: hidden;
-            background: url('a.jpg') no-repeat center/cover;
+            line-height: 1.6;
         }
-        .overlay { background: rgba(255,255,255,0.92); padding: 50px 25px; }
-        .quote { font-family: 'Great Vibes', cursive; font-size: 22px; margin-bottom: 20px; color: #3d5a40; }
-        .names { font-family: 'Great Vibes', cursive; font-size: 38px; color: #3d5a40; margin: 25px 0; line-height: 1.2; }
-        .date { font-size: 20px; margin: 20px 0; line-height: 1.5; }
-        .address { font-size: 15px; margin-bottom: 30px; }
+
+        .date strong {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .address {
+            font-size: 15px;
+            margin-bottom: 30px;
+            line-height: 1.4;
+            color: #444;
+        }
+
+        .actions {
+            width: 100%;
+            max-width: 300px;
+        }
+
         .btn {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            margin: 12px 0; padding: 15px; border-radius: 30px; text-decoration: none;
-            font-weight: 600; background: #3d5a40; color: white !important;
-            transition: 0.3s; border: none; width: 100%; font-size: 16px; cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 55px; /* Altura padronizada */
+            margin-bottom: 12px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            background: #3d5a40;
+            color: white !important;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .palette { display: none; margin-top: 25px; }
-        .color-box { display: inline-block; width: 50px; height: 50px; margin: 6px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); }
-        .bambu { background: #d2b48c; } .preto { background: #000; } .inox { background: #c0c0c0; } .branco { background: #fff; }
-        .note { font-size: 13px; margin-top: 20px; color: #555; font-style: italic; }
+
+        .btn:hover {
+            background: #2f4632;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .palette {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        .color-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-box {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bambu { background: #d2b48c; }
+        .preto { background: #000; }
+        .inox { background: #c0c0c0; }
+        .branco { background: #fff; }
+
+        .note {
+            font-size: 12px;
+            margin-top: 20px;
+            color: #666;
+            max-width: 250px;
+        }
     </style>
 </head>
+
 <body>
+
     <div class="container">
         <div class="overlay">
             <p class="quote">Dois corações que se unem para juntos crescerem no amor e no bem.</p>
-            <div class="names">Luan<br> & <br> Beatriz</div>
-            <p style="font-size: 16px;">convidam para a cerimônia de seu casamento</p>
-            <div class="date"><strong>Sábado, 07 de Novembro</strong><br>às 14:00h</div>
-            <div class="address">Rua José Antonio de Oliveira, 189<br>Nova Petrópolis - SBC</div>
-            <a class="btn" href="https://cha-de-casa-nova-xy28.listaideal.com.br/pt/" target="_blank">🎁 Lista de Presentes</a>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+José+Antonio+de+Oliveira+189+SBC" target="_blank">📍 Localização no Mapa</a>
-            <button class="btn" onclick="togglePalette()">🎨 Paleta de Cores</button>
-            <div class="palette" id="palette">
-                <p><strong>Sugestão de Cores:</strong></p>
-                <div class="color-box bambu"></div><div class="color-box preto"></div>
-                <div class="color-box inox"></div><div class="color-box branco"></div>
-                <p style="font-size: 12px;">Bambu • Preto • Inox • Branco</p>
+
+            <div class="names">
+                Luan & Beatriz
             </div>
-            <p class="note">Pedimos a gentileza de seguir a paleta de cores.</p>
+
+            <p class="subtitle">convidam para a cerimônia de seu casamento</p>
+
+            <div class="date">
+                <strong>Sábado, 07 de Novembro</strong>
+                às 14:00h
+            </div>
+
+            <div class="address">
+                Rua José Antonio de Oliveira, 189<br>
+                Nova Petrópolis - SBC
+            </div>
+
+            <div class="actions">
+                <a class="btn" href="https://cha-de-casa-nova-xy28.listaideal.com.br/pt/" target="_blank">
+                    🎁 Lista de Presentes
+                </a>
+
+                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Rua+José+Antonio+de+Oliveira+189+Nova+Petrópolis+SBC" target="_blank">
+                    📍 Localização no Mapa
+                </a>
+
+                <button class="btn" onclick="togglePalette()">
+                    🎨 Paleta de Cores
+                </button>
+
+                <div class="palette" id="palette">
+                    <p style="font-size: 14px; margin: 0;"><strong>Sugestão de Vestimenta:</strong></p>
+                    <div class="color-group">
+                        <div class="color-box bambu" title="Bambu"></div>
+                        <div class="color-box preto" title="Preto"></div>
+                        <div class="color-box inox" title="Inox"></div>
+                        <div class="color-box branco" title="Branco"></div>
+                    </div>
+                    <p style="font-size: 11px; margin-top: 8px; color: #555;">Bambu • Preto • Inox • Branco</p>
+                </div>
+            </div>
+
+            <p class="note">Ficaremos honrados em ter você conosco. Pedimos a gentileza de seguir a paleta de cores.</p>
         </div>
     </div>
+
     <script>
         function togglePalette() {
             var p = document.getElementById("palette");
             p.style.display = (p.style.display === "block") ? "none" : "block";
+            if(p.style.display === "block") {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
         }
     </script>
+
 </body>
 </html>
